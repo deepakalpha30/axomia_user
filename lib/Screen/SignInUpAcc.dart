@@ -170,13 +170,14 @@ class _SignInUpAccState extends State<SignInUpAcc> {
     deviceHeight = MediaQuery.of(context).size.height;
     deviceWidth = MediaQuery.of(context).size.width;
     return Container(
-        color: Theme.of(context).colorScheme.lightWhite,
+        color: Colors.white,
         child: Center(
             child: SingleChildScrollView(
                 child: Column(
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
             _subLogo(),
+
             welcomeEshopTxt(),
             // eCommerceforBusinessTxt(),
             signInyourAccTxt(),

@@ -102,8 +102,7 @@ class StateOrder extends State<OrderDetail>
   @override
   void dispose() {
     super.dispose();
-
-    buttonController!.dispose();
+    // buttonController!.dispose();
   }
 
   Future<Null> _playAnimation() async {

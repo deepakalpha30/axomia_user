@@ -905,30 +905,30 @@ class StateCart extends State<Cart> with TickerProviderStateMixin {
                                     children: <Widget>[
                                       Row(
                                         children: <Widget>[
-                                          GestureDetector(
-                                            child: Card(
-                                              shape: RoundedRectangleBorder(
-                                                borderRadius:
-                                                    BorderRadius.circular(50),
-                                              ),
-                                              child: Padding(
-                                                padding:
-                                                    const EdgeInsets.all(8.0),
-                                                child: Icon(
-                                                  Icons.remove,
-                                                  size: 15,
-                                                ),
-                                              ),
-                                            ),
-                                            onTap: () {
-                                              if (context
-                                                      .read<CartProvider>()
-                                                      .isProgress ==
-                                                  false)
-                                                removeFromCartCheckout(
-                                                    index, false, cartList);
-                                            },
-                                          ),
+                                          // GestureDetector(
+                                          //   child: Card(
+                                          //     shape: RoundedRectangleBorder(
+                                          //       borderRadius:
+                                          //           BorderRadius.circular(50),
+                                          //     ),
+                                          //     child: Padding(
+                                          //       padding:
+                                          //           const EdgeInsets.all(8.0),
+                                          //       child: Icon(
+                                          //         Icons.remove,
+                                          //         size: 15,
+                                          //       ),
+                                          //     ),
+                                          //   ),
+                                          //   onTap: () {
+                                          //     if (context
+                                          //             .read<CartProvider>()
+                                          //             .isProgress ==
+                                          //         false)
+                                          //       removeFromCartCheckout(
+                                          //           index, false, cartList);
+                                          //   },
+                                          // ),
                                           Container(
                                             width: 26,
                                             height: 20,
@@ -948,69 +948,69 @@ class StateCart extends State<Cart> with TickerProviderStateMixin {
                                                     border: InputBorder.none,
                                                   ),
                                                 ),
-                                                PopupMenuButton<String>(
-                                                  tooltip: '',
-                                                  icon: const Icon(
-                                                    Icons.arrow_drop_down,
-                                                    size: 1,
-                                                  ),
-                                                  onSelected: (String value) {
-                                                    addToCartCheckout(
-                                                        index, value, cartList);
-                                                  },
-                                                  itemBuilder:
-                                                      (BuildContext context) {
-                                                    return cartList[index]
-                                                        .productList![0]
-                                                        .itemsCounter!
-                                                        .map<
-                                                                PopupMenuItem<
-                                                                    String>>(
-                                                            (String value) {
-                                                      return new PopupMenuItem(
-                                                          child: new Text(
-                                                            value,
-                                                            style: TextStyle(
-                                                                color: Theme.of(
-                                                                        context)
-                                                                    .colorScheme
-                                                                    .fontColor),
-                                                          ),
-                                                          value: value);
-                                                    }).toList();
-                                                  },
-                                                ),
+                                                // PopupMenuButton<String>(
+                                                //   tooltip: '',
+                                                //   icon: const Icon(
+                                                //     Icons.arrow_drop_down,
+                                                //     size: 1,
+                                                //   ),
+                                                //   onSelected: (String value) {
+                                                //     addToCartCheckout(
+                                                //         index, value, cartList);
+                                                //   },
+                                                //   itemBuilder:
+                                                //       (BuildContext context) {
+                                                //     return cartList[index]
+                                                //         .productList![0]
+                                                //         .itemsCounter!
+                                                //         .map<
+                                                //                 PopupMenuItem<
+                                                //                     String>>(
+                                                //             (String value) {
+                                                //       return new PopupMenuItem(
+                                                //           child: new Text(
+                                                //             value,
+                                                //             style: TextStyle(
+                                                //                 color: Theme.of(
+                                                //                         context)
+                                                //                     .colorScheme
+                                                //                     .fontColor),
+                                                //           ),
+                                                //           value: value);
+                                                //     }).toList();
+                                                //   },
+                                                // ),
                                               ],
                                             ),
                                           ),
-                                          GestureDetector(
-                                            child: Card(
-                                              shape: RoundedRectangleBorder(
-                                                borderRadius:
-                                                    BorderRadius.circular(50),
-                                              ),
-                                              child: Padding(
-                                                padding:
-                                                    const EdgeInsets.all(8.0),
-                                                child: Icon(
-                                                  Icons.add,
-                                                  size: 15,
-                                                ),
-                                              ),
-                                            ),
-                                            onTap: () {
-                                              addToCartCheckout(
-                                                  index,
-                                                  (int.parse(cartList[index]
-                                                              .qty!) +
-                                                          int.parse(cartList[
-                                                                  index]
-                                                              .productList![0]
-                                                              .qtyStepSize!))
-                                                      .toString(),
-                                                  cartList);
-                                            },
-                                          )
+                                          // GestureDetector(
+                                          //   child: Card(
+                                          //     shape: RoundedRectangleBorder(
+                                          //       borderRadius:
+                                          //           BorderRadius.circular(50),
+                                          //     ),
+                                          //     child: Padding(
+                                          //       padding:
+                                          //           const EdgeInsets.all(8.0),
+                                          //       child: Icon(
+                                          //         Icons.add,
+                                          //         size: 15,
+                                          //       ),
+                                          //     ),
+                                          //   ),
+                                          //   onTap: () {
+                                          //     addToCartCheckout(
+                                          //         index,
+                                          //         (int.parse(cartList[index]
+                                          //                     .qty!) +
+                                          //                 int.parse(cartList[
+                                          //                         index]
+                                          //                     .productList![0]
+                                          //                     .qtyStepSize!))
+                                          //             .toString(),
+                                          //         cartList);
+                                          //   },
+                                          // )
                                         ],
                                       ),
                                     ],
@@ -1715,6 +1715,7 @@ class StateCart extends State<Cart> with TickerProviderStateMixin {
     //     "Minimum allowed quantity is ${cartList[index].productList[0].minOrderQuntity} ",
     //     _scaffoldKey);
   }
+
 
   Future<void> addToCartCheckout(
       int index, String qty, List<SectionModel> cartList) async {
@@ -2451,9 +2452,10 @@ class StateCart extends State<Cart> with TickerProviderStateMixin {
             ),
             child: Text(getTranslated(context, 'SHOP_NOW')!,
                 textAlign: TextAlign.center,
-                style: Theme.of(context).textTheme.headline6!.copyWith(
-                    color: Theme.of(context).colorScheme.white,
-                    fontWeight: FontWeight.normal))),
+                style:TextStyle(
+                  color: Colors.white
+                )
+            )),
         onPressed: () {
           Navigator.of(context).pushNamedAndRemoveUntil(
               '/home', (Route<dynamic> route) => false);

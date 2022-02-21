@@ -47,7 +47,7 @@ class StateProfile extends State<MyProfile> with TickerProviderStateMixin {
   var isDarkTheme;
   bool isDark = false;
   late ThemeNotifier themeNotifier;
-  List<String> langCode = ["en", "zh", "es", "hi", "ar", "ru", "ja", "de"];
+  List<String> langCode = ["en","hi", "zh", "es",  "ar", "ru", "ja", "de"];
   List<String?> themeList = [];
   List<String?> languageList = [];
   final GlobalKey<FormState> _formkey = GlobalKey<FormState>();
@@ -83,9 +83,10 @@ class StateProfile extends State<MyProfile> with TickerProviderStateMixin {
     new Future.delayed(Duration.zero, () {
       languageList = [
         getTranslated(context, 'ENGLISH_LAN'),
+        getTranslated(context, 'HINDI_LAN'),
         getTranslated(context, 'CHINESE_LAN'),
         getTranslated(context, 'SPANISH_LAN'),
-        getTranslated(context, 'HINDI_LAN'),
+
         getTranslated(context, 'ARABIC_LAN'),
         getTranslated(context, 'RUSSIAN_LAN'),
         getTranslated(context, 'JAPANISE_LAN'),
@@ -843,13 +844,14 @@ class StateProfile extends State<MyProfile> with TickerProviderStateMixin {
   Widget build(BuildContext context) {
     languageList = [
       getTranslated(context, 'ENGLISH_LAN'),
-      getTranslated(context, 'CHINESE_LAN'),
-      getTranslated(context, 'SPANISH_LAN'),
       getTranslated(context, 'HINDI_LAN'),
-      getTranslated(context, 'ARABIC_LAN'),
-      getTranslated(context, 'RUSSIAN_LAN'),
-      getTranslated(context, 'JAPANISE_LAN'),
-      getTranslated(context, 'GERMAN_LAN')
+      // getTranslated(context, 'CHINESE_LAN'),
+      // getTranslated(context, 'SPANISH_LAN'),
+      //
+      // getTranslated(context, 'ARABIC_LAN'),
+      // getTranslated(context, 'RUSSIAN_LAN'),
+      // getTranslated(context, 'JAPANISE_LAN'),
+      // getTranslated(context, 'GERMAN_LAN')
     ];
     themeList = [
       getTranslated(context, 'SYSTEM_DEFAULT'),

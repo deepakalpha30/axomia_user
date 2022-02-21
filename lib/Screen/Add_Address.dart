@@ -305,6 +305,7 @@ class StateAddress extends State<AddAddress> with TickerProviderStateMixin {
           ),
           child: TextFormField(
             keyboardType: TextInputType.number,
+            maxLength: 10,
             controller: mobileC,
             inputFormatters: [FilteringTextInputFormatter.digitsOnly],
             textInputAction: TextInputAction.next,

@@ -1,4 +1,4 @@
-package com.alpha.ecommerce;
+package com.axomia.user;
 
 import io.flutter.embedding.android.FlutterActivity;
 

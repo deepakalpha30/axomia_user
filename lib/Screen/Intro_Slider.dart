@@ -39,6 +39,8 @@ class _GettingStartedScreenState extends State<IntroSlider>
           ),
           Slide(
             imageUrl: 'assets/images/introimage_b.png',
+
+
             title: getTranslated(context, 'TITLE2_LBL'),
             description: getTranslated(context, 'DISCRIPTION2'),
           ),
@@ -108,6 +110,7 @@ class _GettingStartedScreenState extends State<IntroSlider>
                   height: MediaQuery.of(context).size.height * .5,
                   child: Image.asset(
                     slideList[index].imageUrl,
+
                   ),
                 ),
                 Container(
@@ -228,11 +231,13 @@ class _GettingStartedScreenState extends State<IntroSlider>
     // SystemChrome.setEnabledSystemUIOverlays([]);
 
     return Scaffold(
+      backgroundColor: Colors.white,
         body: SafeArea(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           skipBtn(),
+
           _slider(),
           _btn(),
         ],

@@ -15,19 +15,17 @@ class SubCategory extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: getAppBar(title, context),
-      body: Center(
-        child: GridView.count(
-            padding: EdgeInsets.all(20),
-            crossAxisCount: 3,
-            shrinkWrap: true,
-            childAspectRatio: .75,
-            children: List.generate(
-              subList!.length,
-              (index) {
-                return subCatItem(index, context);
-              },
-            )),
-      ),
+      body: GridView.count(
+          padding: EdgeInsets.all(20),
+          crossAxisCount: 3,
+          shrinkWrap: true,
+          childAspectRatio: .75,
+          children: List.generate(
+            subList!.length,
+            (index) {
+              return subCatItem(index, context);
+            },
+          )),
     );
   }
 

@@ -29,7 +29,7 @@ class _SplashScreen extends State<Splash> {
     ));
 
     super.initState();
-    startTime();
+     startTime();
   }
 
   @override

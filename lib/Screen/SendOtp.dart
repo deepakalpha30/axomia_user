@@ -554,14 +554,14 @@ class _SendOtpState extends State<SendOtp> with TickerProviderStateMixin {
   Widget getLogo() {
     return Positioned(
       // textDirection: Directionality.of(context),
-      left: (MediaQuery.of(context).size.width / 2) - 50,
+      left: (MediaQuery.of(context).size.width / 2) - 63,
       // right: ((MediaQuery.of(context).size.width /2)-55),
 
-      top: (MediaQuery.of(context).size.height * 0.2) - 50,
+      top: (MediaQuery.of(context).size.height * 0.2) - 68,
       //  bottom: height * 0.1,
       child: SizedBox(
-        width: 100,
-        height: 100,
+        width: 150,
+        height: 150,
         child: Image.asset(
           'assets/images/splash.png',
         ),

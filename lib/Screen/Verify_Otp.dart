@@ -488,7 +488,7 @@ class _MobileOTPState extends State<VerifyOtp> with TickerProviderStateMixin {
         width: 100,
         height: 100,
         child: Image.asset(
-          'assets/images/splash.png',
+          'assets/images/loginlogo.png',
         ),
       ),
     );

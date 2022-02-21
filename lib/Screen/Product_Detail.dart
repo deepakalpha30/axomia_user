@@ -308,23 +308,23 @@ class StateItem extends State<ProductDetail> with TickerProviderStateMixin {
 
     return InkWell(
       onTap: () {
-        Navigator.push(
-            context,
-            PageRouteBuilder(
-              // transitionDuration: Duration(seconds: 1),
-              pageBuilder: (_, __, ___) => ProductPreview(
-                pos: _curSlider,
-                secPos: widget.secPos,
-                index: widget.index,
-                id: widget.model!.id,
-                imgList: sliderList,
-                list: widget.list,
-                video: widget.model!.video,
-                videoType: widget.model!.videType,
-                from: true,
-                screenSize: MediaQuery.of(context).size,
-              ),
-            ));
+        // Navigator.push(
+        //     context,
+        //     PageRouteBuilder(
+        //       // transitionDuration: Duration(seconds: 1),
+        //       pageBuilder: (_, __, ___) => ProductPreview(
+        //         pos: _curSlider,
+        //         secPos: widget.secPos,
+        //         index: widget.index,
+        //         id: widget.model!.id,
+        //         imgList: sliderList,
+        //         list: widget.list,
+        //         video: widget.model!.video,
+        //         videoType: widget.model!.videType,
+        //         from: true,
+        //         screenSize: MediaQuery.of(context).size,
+        //       ),
+        //     ));
       },
       child: Stack(
         children: <Widget>[
@@ -362,7 +362,8 @@ class StateItem extends State<ProductDetail> with TickerProviderStateMixin {
                         ),
                         height: height,
                         width: double.maxFinite,
-                        fit: extendImg ? BoxFit.fill : BoxFit.fitWidth,
+
+                        // fit: extendImg ? BoxFit.fill : BoxFit.fitWidth,
 
                         imageErrorBuilder: (context, error, stackTrace) =>
                             erroWidget(height),
@@ -1641,8 +1642,9 @@ class StateItem extends State<ProductDetail> with TickerProviderStateMixin {
     return Column(children: <Widget>[
       Expanded(
           child: CustomScrollView(slivers: <Widget>[
+            //SizedBox(height: MediaQuery.of(context).size.height * .02,),
         SliverAppBar(
-          expandedHeight: MediaQuery.of(context).size.height * .43,
+          expandedHeight: MediaQuery.of(context).size.height * .32,
           floating: false,
           pinned: true,
           backgroundColor: Theme.of(context).colorScheme.white,
@@ -1863,12 +1865,14 @@ class StateItem extends State<ProductDetail> with TickerProviderStateMixin {
               ),
             ),*/
           ],
+
           title: Text(
             widget.model!.name ?? '',
             maxLines: 1,
             style:
                 TextStyle(color: colors.primary, fontWeight: FontWeight.normal),
           ),
+
           flexibleSpace: FlexibleSpaceBar(
             background: _slider(),
           ),
@@ -2064,8 +2068,9 @@ class StateItem extends State<ProductDetail> with TickerProviderStateMixin {
                             backgroundColor:
                                 Theme.of(context).colorScheme.btnColor),
                         onPressed: () {
-                          String qty = ((int.parse(qtyController.text)) +
-                                  (int.parse(widget.model!.qtyStepSize!)))
+                          String qty = ((int.parse(qtyController.text)) +0
+                                  // (int.parse(widget.model!.qtyStepSize!))
+                               )
                               .toString();
                           addToCart(qty, true);
                         },
@@ -2227,7 +2232,7 @@ class StateItem extends State<ProductDetail> with TickerProviderStateMixin {
                                   productList[index].image!),
                               height: double.maxFinite,
                               width: double.maxFinite,
-                              fit: BoxFit.contain,
+                              fit: BoxFit.cover,
                               imageErrorBuilder: (context, error, stackTrace) =>
                                   erroWidget(
                                 double.maxFinite,

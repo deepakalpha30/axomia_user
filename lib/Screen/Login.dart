@@ -175,8 +175,8 @@ class _LoginPageState extends State<Login> with TickerProviderStateMixin {
     var data = {MOBILE: mobile, PASSWORD: password};
 
     Response response =
-        await post(getUserLoginApi, body: data, headers: headers)
-            .timeout(Duration(seconds: timeOut));
+    await post(getUserLoginApi, body: data, headers: headers)
+        .timeout(Duration(seconds: timeOut));
     var getdata = json.decode(response.body);
 
     bool error = getdata["error"];
@@ -201,13 +201,13 @@ class _LoginPageState extends State<Login> with TickerProviderStateMixin {
       // CUR_USERNAME = username;
 
       UserProvider userProvider =
-          Provider.of<UserProvider>(this.context, listen: false);
+      Provider.of<UserProvider>(this.context, listen: false);
       userProvider.setName(username ?? "");
       userProvider.setEmail(email ?? "");
       userProvider.setProfilePic(image ?? "");
 
       SettingProvider settingProvider =
-          Provider.of<SettingProvider>(context, listen: false);
+      Provider.of<SettingProvider>(context, listen: false);
 
       settingProvider.saveUserDetail(id!, username, email, mobile, city, area,
           address, pincode, latitude, longitude, image, context);
@@ -222,8 +222,8 @@ class _LoginPageState extends State<Login> with TickerProviderStateMixin {
     return Expanded(
       flex: 4,
       child: Center(
-        child: SvgPicture.asset(
-          'assets/images/homelogo.svg',
+        child: Image.asset(
+          'assets/images/homelogo.png',
         ),
       ),
     );
@@ -295,10 +295,10 @@ class _LoginPageState extends State<Login> with TickerProviderStateMixin {
             minWidth: 40,
             maxHeight: 20,
           ),
-          
+
           enabledBorder: UnderlineInputBorder(
             borderSide:
-                BorderSide(color: Theme.of(context).colorScheme.lightBlack2),
+            BorderSide(color: Theme.of(context).colorScheme.lightBlack2),
             borderRadius: BorderRadius.circular(7.0),
           ),
         ),
@@ -345,12 +345,12 @@ class _LoginPageState extends State<Login> with TickerProviderStateMixin {
           prefixIconConstraints: BoxConstraints(minWidth: 40, maxHeight: 20),
           focusedBorder: OutlineInputBorder(
             borderSide:
-                BorderSide(color: Theme.of(context).colorScheme.fontColor),
+            BorderSide(color: Theme.of(context).colorScheme.fontColor),
             borderRadius: BorderRadius.circular(7.0),
           ),
           enabledBorder: UnderlineInputBorder(
             borderSide:
-                BorderSide(color: Theme.of(context).colorScheme.lightWhite),
+            BorderSide(color: Theme.of(context).colorScheme.lightWhite),
             borderRadius: BorderRadius.circular(7.0),
           ),
         ),
@@ -401,8 +401,8 @@ class _LoginPageState extends State<Login> with TickerProviderStateMixin {
                   context,
                   MaterialPageRoute(
                       builder: (context) => SendOtp(
-                            title: getTranslated(context, 'FORGOT_PASS_TITLE'),
-                          )));
+                        title: getTranslated(context, 'FORGOT_PASS_TITLE'),
+                      )));
             },
             child: Text(
               getTranslated(context, "FORGOT_LBL")!,
@@ -432,7 +432,7 @@ class _LoginPageState extends State<Login> with TickerProviderStateMixin {
           ),
           enabledBorder: UnderlineInputBorder(
             borderSide:
-                BorderSide(color: Theme.of(context).colorScheme.lightBlack2),
+            BorderSide(color: Theme.of(context).colorScheme.lightBlack2),
             borderRadius: BorderRadius.circular(7.0),
           ),
         ),
@@ -449,7 +449,7 @@ class _LoginPageState extends State<Login> with TickerProviderStateMixin {
             InkWell(
               onTap: () {
                 SettingProvider settingsProvider =
-                    Provider.of<SettingProvider>(this.context, listen: false);
+                Provider.of<SettingProvider>(this.context, listen: false);
 
                 settingsProvider.setPrefrence(ID, id!);
                 settingsProvider.setPrefrence(MOBILE, mobile!);
@@ -458,9 +458,9 @@ class _LoginPageState extends State<Login> with TickerProviderStateMixin {
                     context,
                     MaterialPageRoute(
                         builder: (context) => SendOtp(
-                              title:
-                                  getTranslated(context, 'FORGOT_PASS_TITLE'),
-                            )));
+                          title:
+                          getTranslated(context, 'FORGOT_PASS_TITLE'),
+                        )));
               },
               child: Text(getTranslated(context, 'FORGOT_PASSWORD_LBL')!,
                   style: Theme.of(context).textTheme.subtitle2!.copyWith(
@@ -554,22 +554,22 @@ class _LoginPageState extends State<Login> with TickerProviderStateMixin {
         key: _scaffoldKey,
         body: _isNetworkAvail
             ? Stack(
-                children: [
-                  Container(
-                    width: double.infinity,
-                    height: double.infinity,
-                    decoration: back(),
-                  ),
-                  Image.asset(
-                    'assets/images/doodle.png',
-                    fit: BoxFit.fill,
-                    width: double.infinity,
-                    height: double.infinity,
-                  ),
-                  getLoginContainer(),
-                  getLogo(),
-                ],
-              )
+          children: [
+            Container(
+              width: double.infinity,
+              height: double.infinity,
+              decoration: back(),
+            ),
+            Image.asset(
+              'assets/images/doodle.png',
+              fit: BoxFit.fill,
+              width: double.infinity,
+              height: double.infinity,
+            ),
+            getLoginContainer(),
+            getLogo(),
+          ],
+        )
             : noInternet(context));
   }
 
@@ -627,16 +627,17 @@ class _LoginPageState extends State<Login> with TickerProviderStateMixin {
   Widget getLogo() {
     return Positioned(
       // textDirection: Directionality.of(context),
-      left: (MediaQuery.of(context).size.width / 2) - 50,
+      left: (MediaQuery.of(context).size.width / 2) - 63,
       // right: ((MediaQuery.of(context).size.width /2)-55),
 
-      top: (MediaQuery.of(context).size.height * 0.2) - 50,
+      top: (MediaQuery.of(context).size.height * 0.2) - 68,
       //  bottom: height * 0.1,
       child: SizedBox(
-        width: 100,
-        height: 100,
+        width: 150,
+        height: 150,
         child: Image.asset(
           'assets/images/splash.png',
+
         ),
       ),
     );
